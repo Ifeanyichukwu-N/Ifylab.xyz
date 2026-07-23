@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Andrew Ifeanyichukwu Portfolio",
+  "description": "Premium personal website of Andrew Ifeanyichukwu, Founder \u0026 CEO of SURCHI and BUSHGUY.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

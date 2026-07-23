@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-gold-50: #fbf8eb;
+  --color-gold-100: #f4edd0;
+  --color-gold-200: #e8d99f;
+  --color-gold-300: #dac167;
+  --color-gold-400: #cca73c;
+  --color-gold-500: #c59b27;
+  --color-gold-600: #a3791d;
+  --color-gold-700: #825b1a;
+  --color-gold-800: #6a491a;
+  --color-gold-900: #5c3f19;
+  --color-gold-950: #35210b;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0B0C10] text-gray-100 antialiased font-sans selection:bg-gold-500/20 selection:text-gold-200;
+  }
+}
+
+/* Custom premium styles */
+.gold-gradient-text {
+  @apply bg-gradient-to-r from-gold-300 via-gold-100 to-gold-400 bg-clip-text text-transparent;
+}
+
+.gold-border-glow {
+  box-shadow: 0 0 15px rgba(197, 155, 39, 0.15);
+}
+
+.gold-hover-glow:hover {
+  box-shadow: 0 0 25px rgba(197, 155, 39, 0.3);
+}
+
+/* Hide scrollbar for cleaner UI */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[#0B0C10];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-800 rounded-full hover:bg-gold-500/50 transition-colors;
+}
