@@ -12,8 +12,8 @@ export default function Footer({ setActiveTab }: FooterProps) {
   };
 
   return (
-    <footer id="app-footer" className="bg-[#07080B] border-t border-neutral-900/50 py-12 px-6 mt-16">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <footer id="app-footer" className="bg-[#07080B] border-t border-neutral-900/50 py-10 sm:py-12 px-4 sm:px-6 mt-16 w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-8 min-w-0">
         
         {/* Brand Block */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">

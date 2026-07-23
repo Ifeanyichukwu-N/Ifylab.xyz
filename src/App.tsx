@@ -17,12 +17,12 @@ export default function App() {
   }, [activeTab]);
 
   return (
-    <div className="min-h-screen bg-[#0B0C10] text-gray-100 flex flex-col selection:bg-gold-500/20 selection:text-gold-200 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0B0C10] text-gray-100 flex flex-col selection:bg-gold-500/20 selection:text-gold-200 overflow-x-hidden w-full max-w-full relative">
       
       {/* Background Decorative Mesh Gradients (Luxury corporate matte black/gold theme) */}
-      <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-amber-500/5 via-transparent to-transparent pointer-events-none z-0" />
-      <div className="absolute top-[20%] left-[-20%] w-[60%] h-[60%] bg-gold-600/2 rounded-full blur-[140px] pointer-events-none z-0" />
-      <div className="absolute bottom-[20%] right-[-20%] w-[60%] h-[60%] bg-amber-700/2 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-amber-500/5 via-transparent to-transparent pointer-events-none z-0 overflow-hidden" />
+      <div className="absolute top-[20%] left-[-10%] sm:left-[-20%] w-[80%] sm:w-[60%] h-[60%] bg-gold-600/2 rounded-full blur-[140px] pointer-events-none z-0 overflow-hidden max-w-full" />
+      <div className="absolute bottom-[20%] right-[-10%] sm:right-[-20%] w-[80%] sm:w-[60%] h-[60%] bg-amber-700/2 rounded-full blur-[140px] pointer-events-none z-0 overflow-hidden max-w-full" />
 
       {/* Main Orchestrator Header */}
       <Header activeTab={activeTab} setActiveTab={setActiveTab} />

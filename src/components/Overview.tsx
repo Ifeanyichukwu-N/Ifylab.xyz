@@ -32,65 +32,66 @@ export default function Overview({ setActiveTab }: OverviewProps) {
   }, []);
 
   return (
-    <section id="overview-section" className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section id="overview-section" className="py-10 sm:py-12 md:py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full min-w-0">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center min-w-0">
         
         {/* Left Side: Professional Profile Content */}
-        <div className="lg:col-span-7 space-y-8">
+        <div className="lg:col-span-7 space-y-6 sm:space-y-8 min-w-0">
           
           {/* Tag and Local Time */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <span className="w-fit px-3.5 py-1.5 bg-neutral-900/90 border border-neutral-800 rounded-full text-[11px] font-mono font-medium tracking-widest text-gold-300 uppercase flex items-center gap-2 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse" />
-              EXECUTIVE PORTFOLIO
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 max-w-full min-w-0">
+            <span className="max-w-full px-3 sm:px-3.5 py-1.5 bg-neutral-900/90 border border-neutral-800 rounded-full text-[10px] sm:text-[11px] font-mono font-medium tracking-wider sm:tracking-widest text-gold-300 uppercase flex items-center gap-1.5 sm:gap-2 shadow-sm shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse shrink-0" />
+              <span>EXECUTIVE PORTFOLIO</span>
             </span>
-            <span className="w-fit px-3.5 py-1.5 bg-neutral-900/90 border border-neutral-800 rounded-full text-[11px] font-mono text-gray-400 flex items-center gap-2 shadow-sm">
-              <Clock className="w-3.5 h-3.5 text-gold-500" />
-              LAGOS OFFICE: <span className="font-semibold text-white font-mono">{lagosTime || '12:00:00 WAT'}</span>
+            <span className="max-w-full px-3 sm:px-3.5 py-1.5 bg-neutral-900/90 border border-neutral-800 rounded-full text-[10px] sm:text-[11px] font-mono text-gray-400 flex items-center gap-1.5 sm:gap-2 shadow-sm shrink-0">
+              <Clock className="w-3.5 h-3.5 text-gold-500 shrink-0" />
+              <span>LAGOS OFFICE:</span>
+              <span className="font-semibold text-white font-mono shrink-0">{lagosTime || '12:00:00 WAT'}</span>
             </span>
           </div>
 
           {/* Heading & Executive Subtitle */}
-          <div className="space-y-3 sm:space-y-4 pt-1">
-            <h1 className="font-display font-light text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.08] tracking-tight">
+          <div className="space-y-3 sm:space-y-4 pt-1 min-w-0">
+            <h1 className="font-display font-light text-2xl xs:text-3xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.12] sm:leading-[1.08] tracking-tight break-words max-w-full">
               Building Intelligent <br className="hidden sm:inline" />
-              <span className="font-bold gold-gradient-text block sm:inline mt-1 sm:mt-0">
+              <span className="font-bold gold-gradient-text block sm:inline mt-1 sm:mt-0 break-words">
                 Blockchain Infrastructure
               </span>
             </h1>
-            <p className="font-mono text-xs sm:text-sm font-semibold text-gold-400/90 tracking-[0.2em] uppercase pt-0.5">
+            <p className="font-mono text-[11px] xs:text-xs sm:text-sm font-semibold text-gold-400/90 tracking-[0.15em] sm:tracking-[0.2em] uppercase pt-0.5 break-words">
               Founder & CEO, SURCHI
             </p>
           </div>
 
           {/* Core Biography paragraph */}
-          <p className="text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl font-light">
+          <p className="text-gray-400 text-xs sm:text-base leading-relaxed max-w-2xl font-light">
             {FOUNDER_INFO.bio}
           </p>
 
           {/* Signature Quote */}
-          <div className="border-l-2 border-gold-500/40 pl-6 py-2 bg-gradient-to-r from-gold-500/5 to-transparent rounded-r-lg">
-            <p className="italic text-gray-300 text-sm sm:text-base leading-relaxed font-light">
+          <div className="border-l-2 border-gold-500/40 pl-4 sm:pl-6 py-2 bg-gradient-to-r from-gold-500/5 to-transparent rounded-r-lg">
+            <p className="italic text-gray-300 text-xs sm:text-base leading-relaxed font-light">
               "{FOUNDER_INFO.signatureQuote}"
             </p>
-            <span className="block mt-2 text-[11px] font-mono tracking-widest text-gold-400 uppercase font-semibold">
+            <span className="block mt-2 text-[10px] sm:text-[11px] font-mono tracking-widest text-gold-400 uppercase font-semibold">
               — FOUNDER'S ETHOS
             </span>
           </div>
 
           {/* Quick Metrics / Action */}
-          <div className="pt-4 flex flex-col sm:flex-row gap-4">
+          <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-full">
             <button
               id="cta-projects"
               onClick={() => setActiveTab('projects')}
-              className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-gold-100 text-black text-xs font-mono font-semibold tracking-widest rounded flex items-center justify-center gap-2 transition-all duration-300 gold-hover-glow cursor-pointer"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 bg-white hover:bg-gold-100 text-black text-xs font-mono font-semibold tracking-wider sm:tracking-widest rounded flex items-center justify-center gap-2 transition-all duration-300 gold-hover-glow cursor-pointer shrink-0"
             >
-              EXPLORE ECOSYSTEM <ArrowRight className="w-3.5 h-3.5" />
+              EXPLORE ECOSYSTEM <ArrowRight className="w-3.5 h-3.5 shrink-0" />
             </button>
             <button
               id="cta-contact"
               onClick={() => setActiveTab('contact')}
-              className="w-full sm:w-auto px-6 py-3 border border-neutral-800 hover:border-gold-500/50 text-white text-xs font-mono font-medium tracking-widest rounded flex items-center justify-center transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-5 sm:px-6 py-3 border border-neutral-800 hover:border-gold-500/50 text-white text-xs font-mono font-medium tracking-wider sm:tracking-widest rounded flex items-center justify-center transition-colors cursor-pointer shrink-0"
             >
               CONTACT INQUIRY
             </button>
@@ -99,12 +100,12 @@ export default function Overview({ setActiveTab }: OverviewProps) {
         </div>
 
         {/* Right Side: High-End Avatar Frame */}
-        <div className="lg:col-span-5 flex justify-center">
-          <div className="relative group w-full max-w-[380px]">
+        <div className="lg:col-span-5 flex justify-center w-full min-w-0">
+          <div className="relative group w-full max-w-[380px] mx-auto">
             {/* Background luxury gold-glow elements */}
             <div className="absolute -inset-1.5 bg-gradient-to-tr from-gold-600 via-gold-300 to-amber-700 rounded-2xl opacity-10 blur group-hover:opacity-20 transition duration-1000" />
             
-            <div className="relative bg-[#0D0E12] border border-neutral-800 p-3 rounded-2xl gold-border-glow">
+            <div className="relative bg-[#0D0E12] border border-neutral-800 p-3 sm:p-3.5 rounded-2xl gold-border-glow max-w-full">
               {/* Profile Image with absolute referrer policy */}
               <div className="overflow-hidden rounded-xl aspect-[3/4] bg-neutral-900 relative">
                 <img
@@ -115,9 +116,9 @@ export default function Overview({ setActiveTab }: OverviewProps) {
                 />
                 
                 {/* Overlay Location tag */}
-                <div className="absolute bottom-4 left-4 right-4 bg-black/80 backdrop-blur-md border border-neutral-800 py-2 px-4 rounded-lg flex items-center justify-between">
-                  <span className="text-[10px] font-mono tracking-widest text-gray-400 uppercase font-medium">Headquarters</span>
-                  <span className="text-xs font-medium text-white flex items-center gap-1.5">
+                <div className="absolute bottom-3 sm:bottom-4 left-3 right-3 sm:left-4 sm:right-4 bg-black/80 backdrop-blur-md border border-neutral-800 py-1.5 sm:py-2 px-3 sm:px-4 rounded-lg flex items-center justify-between">
+                  <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-gray-400 uppercase font-medium">Headquarters</span>
+                  <span className="text-[11px] sm:text-xs font-medium text-white flex items-center gap-1.5">
                     <MapPin className="w-3.5 h-3.5 text-gold-400" />
                     Lagos, NG
                   </span>
@@ -125,12 +126,12 @@ export default function Overview({ setActiveTab }: OverviewProps) {
               </div>
 
               {/* CEO metadata footer below image */}
-              <div className="mt-4 pt-3 border-t border-neutral-900/80 flex justify-between items-center px-2">
+              <div className="mt-3 sm:mt-4 pt-3 border-t border-neutral-900/80 flex justify-between items-center px-1 sm:px-2">
                 <div>
-                  <h4 className="font-display font-semibold text-sm text-white">Andrew Ifeanyichukwu</h4>
-                  <p className="text-[10px] font-mono text-gold-400">FOUNDER & CEO, SURCHI</p>
+                  <h4 className="font-display font-semibold text-xs sm:text-sm text-white">Andrew Ifeanyichukwu</h4>
+                  <p className="text-[9px] sm:text-[10px] font-mono text-gold-400">FOUNDER & CEO, SURCHI</p>
                 </div>
-                <div className="bg-gold-500/10 border border-gold-500/20 text-gold-300 p-1.5 rounded-lg">
+                <div className="bg-gold-500/10 border border-gold-500/20 text-gold-300 p-1.5 rounded-lg shrink-0">
                   <Award className="w-4 h-4" />
                 </div>
               </div>
@@ -141,35 +142,35 @@ export default function Overview({ setActiveTab }: OverviewProps) {
       </div>
 
       {/* Featured Under-Banner Metrics Bar */}
-      <div className="mt-20 pt-10 border-t border-neutral-900/60 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-6 rounded-xl flex items-start gap-4">
-          <div className="p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
-            <Zap className="w-5 h-5" />
+      <div className="mt-14 sm:mt-20 pt-8 sm:pt-10 border-t border-neutral-900/60 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 min-w-0">
+        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-4 sm:p-6 rounded-xl flex items-start gap-3.5 sm:gap-4 min-w-0">
+          <div className="p-2.5 sm:p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
+            <Zap className="w-4 sm:w-5 h-4 sm:h-5" />
           </div>
-          <div>
-            <h3 className="font-display font-semibold text-white text-base">SURCHI DeFi Intelligence</h3>
+          <div className="min-w-0">
+            <h3 className="font-display font-semibold text-white text-sm sm:text-base">SURCHI DeFi Intelligence</h3>
             <p className="text-xs text-gray-400 mt-1 leading-relaxed">
               Consolidating multi-chain analytics, threat levels, and wallet forensics with advanced AI models.
             </p>
           </div>
         </div>
-        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-6 rounded-xl flex items-start gap-4">
-          <div className="p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
-            <ShieldCheck className="w-5 h-5" />
+        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-4 sm:p-6 rounded-xl flex items-start gap-3.5 sm:gap-4 min-w-0">
+          <div className="p-2.5 sm:p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
+            <ShieldCheck className="w-4 sm:w-5 h-4 sm:h-5" />
           </div>
-          <div>
-            <h3 className="font-display font-semibold text-white text-base">Community Cohesion</h3>
+          <div className="min-w-0">
+            <h3 className="font-display font-semibold text-white text-sm sm:text-base">Community Cohesion</h3>
             <p className="text-xs text-gray-400 mt-1 leading-relaxed">
               BUSHGUY coin leading organic Solana narratives with wilderness-inspired community building.
             </p>
           </div>
         </div>
-        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-6 rounded-xl flex items-start gap-4">
-          <div className="p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
-            <Clock className="w-5 h-5" />
+        <div className="bg-[#0C0D11]/40 border border-neutral-900 p-4 sm:p-6 rounded-xl flex items-start gap-3.5 sm:gap-4 min-w-0">
+          <div className="p-2.5 sm:p-3 bg-neutral-950 border border-neutral-800 text-gold-400 rounded-lg shrink-0">
+            <Clock className="w-4 sm:w-5 h-4 sm:h-5" />
           </div>
-          <div>
-            <h3 className="font-display font-semibold text-white text-base">Global Innovation</h3>
+          <div className="min-w-0">
+            <h3 className="font-display font-semibold text-white text-sm sm:text-base">Global Innovation</h3>
             <p className="text-xs text-gray-400 mt-1 leading-relaxed">
               Nigeria's tech landscape bridging the decentralized future with raw strategic project execution.
             </p>

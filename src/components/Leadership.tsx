@@ -4,17 +4,17 @@ import { motion } from 'motion/react';
 
 export default function Leadership() {
   return (
-    <section id="leadership-section" className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
+    <section id="leadership-section" className="py-10 sm:py-12 md:py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full min-w-0">
       
       {/* Section Header */}
-      <div className="mb-12 md:mb-16 space-y-3 max-w-2xl">
+      <div className="mb-10 sm:mb-12 md:mb-16 space-y-3 max-w-2xl min-w-0">
         <span className="text-[11px] font-mono font-bold tracking-widest text-gold-400 uppercase">
           STRATEGIC DIRECTION
         </span>
-        <h2 className="font-display font-light text-3xl sm:text-4xl text-white leading-tight">
+        <h2 className="font-display font-light text-2xl xs:text-3xl sm:text-4xl text-white leading-tight break-words">
           Executive Leadership & <span className="font-bold font-display gold-gradient-text">Core Pillars</span>
         </h2>
-        <p className="text-gray-400 text-sm font-light leading-relaxed">
+        <p className="text-gray-400 text-xs sm:text-sm font-light leading-relaxed">
           Aligning intelligent automated blockchain analytics with strategic community design to foster transparent and accessible multi-chain protocols.
         </p>
       </div>

@@ -66,17 +66,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact-section" className="py-12 md:py-20 px-6 max-w-7xl mx-auto">
+    <section id="contact-section" className="py-10 sm:py-12 md:py-20 px-4 sm:px-6 max-w-7xl mx-auto w-full min-w-0">
       
       {/* Section Header */}
-      <div className="mb-12 md:mb-16 space-y-3">
+      <div className="mb-10 sm:mb-12 md:mb-16 space-y-3 min-w-0">
         <span className="text-[11px] font-mono font-bold tracking-widest text-gold-400 uppercase">
           EXECUTIVE INQUIRIES
         </span>
-        <h2 className="font-display font-light text-3xl sm:text-4xl text-white leading-tight">
+        <h2 className="font-display font-light text-2xl xs:text-3xl sm:text-4xl text-white leading-tight break-words">
           Connect With Our <span className="font-bold font-display gold-gradient-text">Office</span>
         </h2>
-        <p className="text-gray-400 text-sm max-w-xl font-light leading-relaxed">
+        <p className="text-gray-400 text-xs sm:text-sm max-w-xl font-light leading-relaxed">
           For strategic partnerships, corporate queries, or ecosystem collaboration, please visit the official channels or initiate an executive draft below.
         </p>
       </div>

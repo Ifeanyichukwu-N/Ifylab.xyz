@@ -19,8 +19,8 @@ export default function Header({ activeTab, setActiveTab }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header id="app-header" className="sticky top-0 z-50 bg-[#0B0C10]/80 backdrop-blur-md border-b border-neutral-900/50">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <header id="app-header" className="sticky top-0 z-50 bg-[#0B0C10]/80 backdrop-blur-md border-b border-neutral-900/50 w-full max-w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between min-w-0">
         {/* Brand Wordmark */}
         <div 
           id="brand-logo"
