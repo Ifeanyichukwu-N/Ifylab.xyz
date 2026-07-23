@@ -289,12 +289,12 @@ export default function Contact() {
 
             <div className="space-y-2 pt-2">
               <a
-                href="https://surchi.xyz"
+                href="https://www.surchi.xyz"
                 target="_blank"
                 rel="noreferrer"
                 className="block text-center py-2.5 bg-neutral-950 hover:bg-neutral-900 border border-neutral-800 hover:border-gold-400 text-xs font-mono font-medium tracking-wider text-white rounded transition-all"
               >
-                SURCHI (surchi.xyz)
+                SURCHI (www.surchi.xyz)
               </a>
               <a
                 href="https://bushguy.xyz"

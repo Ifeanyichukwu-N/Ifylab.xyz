@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
   {
     id: "surchi",
     name: "SURCHI",
-    website: "https://surchi.xyz",
+    website: "https://www.surchi.xyz",
     logoUrl: surchiLogo,
     description: "SURCHI is an AI-powered multi-chain DeFi intelligence platform that delivers real-time market analytics, token discovery, wallet intelligence, and security insights across major blockchain ecosystems. The platform is built to simplify decentralized finance through intelligent automation, live data, and professional-grade analytics.",
     tags: ["DeFi", "AI Analytics", "Multi-Chain", "Intelligence"],
