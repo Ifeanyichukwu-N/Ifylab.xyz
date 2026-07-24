@@ -61,23 +61,32 @@ export default async function handler(req: any, res: any) {
       return res.status(400).json({ error: "Message body is required." });
     }
 
-    let resendApiKey = process.env.RESEND_API_KEY || "";
-    let contactEmail = process.env.CONTACT_EMAIL || "support@ifylab.xyz";
+    // Non-sensitive environment variable check and logging
+    console.log("Resend key detected:", !!process.env.RESEND_API_KEY);
+    console.log("Key prefix:", process.env.RESEND_API_KEY ? process.env.RESEND_API_KEY.trim().replace(/^["']|["']$/g, "").slice(0, 3) : "none");
 
-    resendApiKey = resendApiKey.trim().replace(/^["']|["']$/g, "");
-    contactEmail = contactEmail.trim().replace(/^["']|["']$/g, "");
+    const rawKey = process.env.RESEND_API_KEY;
+    if (!rawKey) {
+      console.error("[SERVER ERROR] RESEND_API_KEY is missing from environment variables.");
+      return res.status(500).json({ 
+        error: "RESEND_API_KEY is missing from the environment settings. Please ensure RESEND_API_KEY is set in Vercel or AI Studio Settings." 
+      });
+    }
 
-    if (!resendApiKey || resendApiKey === "" || resendApiKey === "your_resend_api_key") {
-      console.error("[SERVER ERROR] RESEND_API_KEY is not defined or is placeholder in the environment.");
+    const resendApiKey = rawKey.trim().replace(/^["']|["']$/g, "");
+    let contactEmail = (process.env.CONTACT_EMAIL || "support@ifylab.xyz").trim().replace(/^["']|["']$/g, "");
+
+    if (!resendApiKey || resendApiKey === "your_resend_api_key") {
+      console.error("[SERVER ERROR] RESEND_API_KEY is empty or placeholder.");
       return res.status(400).json({ 
-        error: "API Key Not Configured: Please enter a valid RESEND_API_KEY (starting with 're_') in the AI Studio Settings menu or Vercel environment variables." 
+        error: "API Key Not Configured: Please enter a valid RESEND_API_KEY in Vercel or AI Studio Settings." 
       });
     }
 
     if (!resendApiKey.startsWith("re_")) {
       console.error("[SERVER ERROR] RESEND_API_KEY format is invalid (does not start with 're_').");
       return res.status(400).json({
-        error: "Invalid Resend API Key Format: Your RESEND_API_KEY must start with 're_'. Please update your key in the AI Studio Settings menu or Vercel Environment Variables."
+        error: "Invalid Resend API Key Format: Your RESEND_API_KEY must start with 're_'. Please update your key in Vercel or AI Studio Settings."
       });
     }
 
