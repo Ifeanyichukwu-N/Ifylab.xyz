@@ -8,6 +8,7 @@ export default function Contact() {
     name: '',
     company: '',
     email: '',
+    phone: '',
     subject: '',
     message: ''
   });
@@ -60,6 +61,7 @@ export default function Contact() {
       name: '',
       company: '',
       email: '',
+      phone: '',
       subject: '',
       message: ''
     });
@@ -182,17 +184,30 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <label htmlFor="form-email" className="text-[10px] font-mono tracking-wider text-gray-400 uppercase">Email Address *</label>
-                <input
-                  id="form-email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="e.g. lead@protocol.io"
-                  className="w-full bg-neutral-950 border border-neutral-900 focus:border-gold-500/50 text-white rounded p-3 text-xs focus:outline-none transition-colors"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="space-y-1">
+                  <label htmlFor="form-email" className="text-[10px] font-mono tracking-wider text-gray-400 uppercase">Email Address *</label>
+                  <input
+                    id="form-email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="e.g. lead@protocol.io"
+                    className="w-full bg-neutral-950 border border-neutral-900 focus:border-gold-500/50 text-white rounded p-3 text-xs focus:outline-none transition-colors"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label htmlFor="form-phone" className="text-[10px] font-mono tracking-wider text-gray-400 uppercase">Phone Number (Optional)</label>
+                  <input
+                    id="form-phone"
+                    type="tel"
+                    value={formData.phone || ''}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="e.g. +1 (555) 000-0000"
+                    className="w-full bg-neutral-950 border border-neutral-900 focus:border-gold-500/50 text-white rounded p-3 text-xs focus:outline-none transition-colors"
+                  />
+                </div>
               </div>
 
               <div className="space-y-1">
@@ -279,11 +294,11 @@ export default function Contact() {
 
             <div className="text-center space-y-2">
               <h4 className="font-display font-semibold text-lg text-white">Inquiry Dispatched</h4>
-              <p className="text-xs text-gray-400 leading-relaxed font-light">
-                Thank you, <strong className="text-white font-medium">{formData.name}</strong>. Your inquiry has been routed to the CEO's office.
+              <p className="text-sm text-gold-300 font-medium">
+                Thank you! Your message has been sent successfully.
               </p>
-              <p className="text-xs text-gray-400 leading-relaxed font-light pt-2">
-                A secure transmission copy was dispatched via Resend. For immediate assistance or official ecosystem products, explore our channels:
+              <p className="text-xs text-gray-400 leading-relaxed font-light pt-1">
+                Your inquiry has been routed to the office via <strong className="text-white font-medium">support@ifylab.xyz</strong>.
               </p>
             </div>
 
