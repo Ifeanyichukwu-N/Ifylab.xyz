@@ -70,7 +70,14 @@ export default async function handler(req: any, res: any) {
     if (!resendApiKey || resendApiKey === "" || resendApiKey === "your_resend_api_key") {
       console.error("[SERVER ERROR] RESEND_API_KEY is not defined or is placeholder in the environment.");
       return res.status(400).json({ 
-        error: "API Key Not Configured: Please add your valid RESEND_API_KEY (from resend.com, starting with 're_') in Vercel or AI Studio environment settings." 
+        error: "API Key Not Configured: Please enter a valid RESEND_API_KEY (starting with 're_') in the AI Studio Settings menu or Vercel environment variables." 
+      });
+    }
+
+    if (!resendApiKey.startsWith("re_")) {
+      console.error("[SERVER ERROR] RESEND_API_KEY format is invalid (does not start with 're_').");
+      return res.status(400).json({
+        error: "Invalid Resend API Key Format: Your RESEND_API_KEY must start with 're_'. Please update your key in the AI Studio Settings menu or Vercel Environment Variables."
       });
     }
 
@@ -243,7 +250,7 @@ export default async function handler(req: any, res: any) {
     const resend = new Resend(resendApiKey);
 
     const { data: resData, error: resendErr } = await resend.emails.send({
-      from: "support@ifylab.xyz",
+      from: "IfyLab Website <noreply@ifylab.xyz>",
       to: [contactEmail],
       replyTo: sanitizedEmail,
       subject: `New Contact Form Submission - ${sanitizedName}`,
@@ -255,9 +262,10 @@ export default async function handler(req: any, res: any) {
 
       let userMsg = "Failed to dispatch email. Please try again later.";
       const errMsg = resendErr.message || "";
+      const errStatusCode = (resendErr as any).statusCode;
 
-      if (errMsg.toLowerCase().includes("api key") || resendErr.name === "validation_error") {
-        userMsg = "Invalid Resend API Key: Please verify your RESEND_API_KEY environment variable.";
+      if (errStatusCode === 401 || errMsg.toLowerCase().includes("api key") || resendErr.name === "validation_error") {
+        userMsg = "Invalid Resend API Key: The RESEND_API_KEY set in your environment is invalid. Please check and re-enter your key from resend.com (starting with 're_') in the AI Studio Settings menu or Vercel Environment Variables.";
       } else if (errMsg.toLowerCase().includes("domain") || errMsg.toLowerCase().includes("not verified")) {
         userMsg = "Domain verification error: Ensure ifylab.xyz is verified in your Resend account settings.";
       }
